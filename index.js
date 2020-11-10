@@ -89,4 +89,29 @@ app.post('/', (req, res) => {
 	makeRequest(replyTo, replyBody);
 });
 
+app.post('/check', (req, res) => {
+	console.log(`Got request body: ${JSON.stringify(req.body)}`)
+	const {
+		request_id,
+		appeal_id,
+		replyTo,
+		request_time,
+		message_number
+	} = req.body;
+	const requestText = req.body.data[0].content;
+	const replyBody = {
+		request_id, appeal_id, request_time, message_number,
+		"replyTo_id": "",
+		"result": getResult(requestText),
+		"responce_data": {
+    		"scenario_id": "omnichatadapter"
+    	},
+		"errors": []
+	};
+	addReplyBodyIfNeeded(replyBody, requestText);
+
+	res.status(200).send('CHECK');
+	makeRequest(replyTo, replyBody);
+});
+
 app.listen(port, () => console.log(`App is available on localhost: ${port}`));
