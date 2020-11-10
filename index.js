@@ -112,6 +112,7 @@ app.post('/check', (req, res) => {
 app.post('/mod/:mod', (req, res) => {
 	mod = Number(req.params.mod);
 	res.status(200).send('mod=' + req.params.mod);
+	step = 0;
 });
 
 
