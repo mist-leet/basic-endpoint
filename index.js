@@ -89,13 +89,13 @@ app.post('/', (req, res) => {
 	makeRequest(replyTo, replyBody);
 });
 
-var a = 0;
+var a = 1;
 
 app.post('/check', (req, res) => {
 	a += 1;
-	if (a % 3 == 0) {
+	if (a % 10 == 0) {
 		res.status(500).send('bad');	
-		a = 0;	
+		a = 1;	
 	}
 	res.status(200).send('CHECKs');
 });
