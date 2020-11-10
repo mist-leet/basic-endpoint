@@ -89,15 +89,22 @@ app.post('/', (req, res) => {
 	makeRequest(replyTo, replyBody);
 });
 
-var a = 1;
-
+var step= 1;
+var mod = 10
 app.post('/check', (req, res) => {
-	a += 1;
-	if (a % 10 == 0) {
+	step+= 1;
+	if (step % mod == 0) {
 		res.status(500).send('bad');	
-		a = 1;	
+		step= 1;	
 	}
 	res.status(200).send('CHECKs');
 });
+
+app.post('/mod/:mod', (req, res) => {
+	mod = Number(req.params.mod);
+	res.status(200).send('mod=' + req.params.mod);
+});
+
+
 
 app.listen(port, () => console.log(`App is available on localhost: ${port}`));
