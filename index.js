@@ -89,7 +89,13 @@ app.post('/', (req, res) => {
 	makeRequest(replyTo, replyBody);
 });
 
+var a = 0;
+
 app.post('/check', (req, res) => {
+	a += 1;
+	if (a % 3 == 0) {
+		res.status(500).send('bad');		
+	}
 	console.log(`Got request body: ${JSON.stringify(req.body)}`)
 	const {
 		request_id,
