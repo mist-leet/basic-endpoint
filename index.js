@@ -89,7 +89,7 @@ app.post('/', (req, res) => {
 	makeRequest(replyTo, replyBody);
 });
 
-var step = 1;
+var step = 0;
 var mod = 10;
 app.post('/check', (req, res) => {
 	step += 1;
@@ -99,7 +99,7 @@ app.post('/check', (req, res) => {
 			"current_mod": mod,
 			"current_status": "500"
 		});
-		step = 1;	
+		step = 0;	
 	}
 
 	res.status(200).send({
