@@ -94,30 +94,10 @@ var a = 0;
 app.post('/check', (req, res) => {
 	a += 1;
 	if (a % 3 == 0) {
-		res.status(500).send('bad');		
+		res.status(500).send('bad');	
+		a = 0;	
 	}
-	console.log(`Got request body: ${JSON.stringify(req.body)}`)
-	const {
-		request_id,
-		appeal_id,
-		replyTo,
-		request_time,
-		message_number
-	} = req.body;
-	const requestText = req.body.data[0].content;
-	const replyBody = {
-		request_id, appeal_id, request_time, message_number,
-		"replyTo_id": "",
-		"result": getResult(requestText),
-		"responce_data": {
-    		"scenario_id": "omnichatadapter"
-    	},
-		"errors": []
-	};
-	addReplyBodyIfNeeded(replyBody, requestText);
-
-	res.status(200).send('CHECK');
-	makeRequest(replyTo, replyBody);
+	res.status(200).send('CHECKs');
 });
 
 app.listen(port, () => console.log(`App is available on localhost: ${port}`));
