@@ -89,15 +89,24 @@ app.post('/', (req, res) => {
 	makeRequest(replyTo, replyBody);
 });
 
-var step= 1;
-var mod = 10
+var step = 1;
+var mod = 10;
 app.post('/check', (req, res) => {
-	step+= 1;
+	step += 1;
 	if (step % mod == 0) {
-		res.status(500).send('bad');	
-		step= 1;	
+		res.status(500).send({
+			"current_step": step,
+			"current_mod": mod,
+			"current_status": "500"
+		});
+		step = 1;	
 	}
-	res.status(200).send('CHECKs');
+
+	res.status(200).send({
+		"current_step": step,
+		"current_mod": mod,
+		"current_status": "200OK"
+	});
 });
 
 app.post('/mod/:mod', (req, res) => {
