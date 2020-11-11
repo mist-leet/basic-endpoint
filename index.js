@@ -108,13 +108,10 @@ app.post('/check', (req, res) => {
 		console.log('500 sent');
 		return;
 	}
+	
 	step = 0;
 	
-	res.status(200).send({
-		"current_step": step,
-		"current_mod": mod,
-		"current_status": "200OK"
-	});
+	res.status(200).send("ok");
 	console.log('200 sent');
 });
 
