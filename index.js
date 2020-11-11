@@ -70,9 +70,8 @@ var mod = 0;
 
 app.post('/', (req, res) => {
 	console.log(`Got request body: ${JSON.stringify(req.body)}`);
-	console.log('step: ', step);
-	console.log('step: ', mod);
-	
+	console.log(`(step:${step},mod:${mod}`);
+
 	const {
 		request_id,
 		appeal_id,
@@ -97,9 +96,7 @@ app.post('/', (req, res) => {
 });
 
 app.post('/check', (req, res) => {
-	console.log('step: ', step);
-	console.log('step: ', mod);
-	console.log('checking..');
+	console.log(`checking... (step:${step},mod:${mod}`);
 	if (step < mod) {
 		
 		res.status(500).send({
@@ -108,6 +105,7 @@ app.post('/check', (req, res) => {
 			"current_status": "500"
 		});
 		step += 1;
+		console.log('500 sent');
 		return;
 	}
 	step = 0;
@@ -117,6 +115,7 @@ app.post('/check', (req, res) => {
 		"current_mod": mod,
 		"current_status": "200OK"
 	});
+	console.log('200 sent');
 });
 
 app.post('/mod/:mod', (req, res) => {
