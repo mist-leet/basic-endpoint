@@ -103,7 +103,7 @@ app.post('/check', (req, res) => {
 			"current_step": step,
 			"current_mod": mod,
 			"current_status": "500"
-		};
+		});
 		step += 1;
 		return;
 	}
