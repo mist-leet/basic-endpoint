@@ -97,6 +97,9 @@ app.post('/', (req, res) => {
 });
 
 app.post('/check', (req, res) => {
+	console.log('step: ', step);
+	console.log('step: ', mod);
+	console.log('checking..');
 	if (step < mod) {
 		
 		res.status(500).send({
