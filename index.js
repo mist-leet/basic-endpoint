@@ -92,6 +92,9 @@ app.post('/', (req, res) => {
 var step = 0;
 var mod = 10;
 app.post('/check', (req, res) => {
+	if (step > 1000) {
+		step = 0;
+	}
 	step += 1;
 	if (step % mod == 0) {
 		res.status(500).send({
