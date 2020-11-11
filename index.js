@@ -64,8 +64,15 @@ function addReplyBodyIfNeeded(replyBody, requestText) {
 	}];
 }
 
+var step = 0;
+var mod = 0;
+
+
 app.post('/', (req, res) => {
 	console.log(`Got request body: ${JSON.stringify(req.body)}`)
+	console.log('step: ', step)
+	console.log('step: ', mod)
+	
 	const {
 		request_id,
 		appeal_id,
@@ -89,22 +96,19 @@ app.post('/', (req, res) => {
 	makeRequest(replyTo, replyBody);
 });
 
-var step = 0;
-var mod = 10;
 app.post('/check', (req, res) => {
-	if (step > 1000) {
-		step = 0;
-	}
-	step += 1;
-	if (step % mod == 0) {
+	if (step > mod) {
+		
 		res.status(500).send({
 			"current_step": step,
 			"current_mod": mod,
 			"current_status": "500"
-		});
-		step = 0;	
+		};
+		step += 1;
+		return;
 	}
-
+	step = 0;
+	
 	res.status(200).send({
 		"current_step": step,
 		"current_mod": mod,
@@ -114,7 +118,7 @@ app.post('/check', (req, res) => {
 
 app.post('/mod/:mod', (req, res) => {
 	mod = Number(req.params.mod);
-	res.status(200).send('mod=' + req.params.mod);
+	res.status(200).send('mod = ' + req.params.mod);
 	step = 0;
 });
 
