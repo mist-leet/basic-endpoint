@@ -70,7 +70,7 @@ var mod = 0;
 
 app.post('/', (req, res) => {
 	console.log(`Got request body: ${JSON.stringify(req.body)}`);
-	console.log(`(step:${step},mod:${mod}`);
+	console.log(`(step:${step},mod:${mod})`);
 
 	const {
 		request_id,
@@ -96,7 +96,7 @@ app.post('/', (req, res) => {
 });
 
 app.post('/check', (req, res) => {
-	console.log(`checking... (step:${step},mod:${mod}`);
+	console.log(`checking... (step:${step},mod:${mod})`);
 	if (step < mod) {
 		
 		res.status(500).send({
