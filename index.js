@@ -97,7 +97,7 @@ app.post('/', (req, res) => {
 });
 
 app.post('/check', (req, res) => {
-	if (step > mod) {
+	if (step < mod) {
 		
 		res.status(500).send({
 			"current_step": step,
