@@ -69,9 +69,9 @@ var mod = 0;
 
 
 app.post('/', (req, res) => {
-	console.log(`Got request body: ${JSON.stringify(req.body)}`)
-	console.log('step: ', step)
-	console.log('step: ', mod)
+	console.log(`Got request body: ${JSON.stringify(req.body)}`);
+	console.log('step: ', step);
+	console.log('step: ', mod);
 	
 	const {
 		request_id,
