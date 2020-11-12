@@ -109,9 +109,10 @@ app.post('/check', (req, res) => {
 });
 
 valid_mods = ["1", "-1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
+
 app.post('/mod/:mod', (req, res) => {
 	
-	if (valid_mods.include(req.params.mod)) {
+	if (valid_mods.includes(req.params.mod)) {
 		res.status(200).send(`mod: ${mod}`);
 		mod = Number(req.params.mod);
 	}
