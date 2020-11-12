@@ -64,13 +64,14 @@ function addReplyBodyIfNeeded(replyBody, requestText) {
 	}];
 }
 
-var step = 0;
-var mod = 0;
+function randomIntInc(low, high) {
+  return Math.floor(Math.random() * (high - low + 1) + low)
+}
 
+var mod = 1;
 
 app.post('/', (req, res) => {
 	console.log(`Got request body: ${JSON.stringify(req.body)}`);
-	console.log(`(step:${step},mod:${mod})`);
 
 	const {
 		request_id,
@@ -96,29 +97,27 @@ app.post('/', (req, res) => {
 });
 
 app.post('/check', (req, res) => {
-	console.log(`checking... (step:${step},mod:${mod})`);
-	if (step < mod) {
-		
-		res.status(500).send({
-			"current_step": step,
-			"current_mod": mod,
-			"current_status": "500"
-		});
-		step += 1;
+	console.log(`checking... (mod:${mod})`);
+	if (randomIntInc(1, 10) <= mod) {
+		res.status(500).send(500);
 		console.log('500 sent');
 		return;
 	}
-	
-	step = 0;
-	
-	res.status(200).send("ok");
-	console.log('200 sent');
+	else {
+		res.status(200).send("ok");
+		console.log('200 sent');
+	}
 });
 
 app.post('/mod/:mod', (req, res) => {
-	mod = Number(req.params.mod);
-	res.status(200).send('mod = ' + req.params.mod);
-	step = 0;
+	
+	if (["1", "-1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"].include(req.params.mod)) {
+		res.status(200).send(`mod: ${mod}`);
+		mod = Number(req.params.mod);
+	}
+	else {
+		res.status(403).send(`mod: ${mod}`);	
+	}
 });
 
 
