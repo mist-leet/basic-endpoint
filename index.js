@@ -108,6 +108,18 @@ app.post('/check', (req, res) => {
 	}
 });
 
+app.post('/check_with_no_body', (req, res) => {
+	console.log(`checking... (mod:${mod})`);
+	if (randomIntInc(1, 10) <= mod) {
+		res.status(500).send(500);
+		console.log('500 sent');
+	}
+	else {
+		res.status(200).send();
+		console.log('200 sent');
+	}
+});
+
 valid_mods = ["1", "0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
 
 app.post('/mod/:mod', (req, res) => {
