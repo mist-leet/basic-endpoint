@@ -105,7 +105,7 @@ app.post('/', (req, res) => {
 
 app.post('/check', (req, res) => {
 	console.log(`checking... (mod:${mod})`);
-	if (randomIntInc(1, 10) <= mod) {
+	if (randomIntInc(1, 10) <= mod || enable != 1) {
 		res.status(500).send(500);
 		console.log('500 sent');
 	}
