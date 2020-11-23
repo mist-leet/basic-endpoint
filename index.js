@@ -4,10 +4,13 @@ const request = require('request');
 const port = process.env.PORT || 4444;
 const app = express();
 
+var mod = 1;
+var enable = 1;
+
 app.use(express.json());
 
 function makeRequest(url, data) {
-	console.log(`Making request with ${JSON.stringify(data)} to ${url}`)
+	//console.log(`Making request with ${JSON.stringify(data)} to ${url}`)
 	request.post(url, {json: data}, (err, res, body) => {
 		if (err) {
 			console.error(err);
@@ -68,8 +71,6 @@ function randomIntInc(low, high) {
   return Math.floor(Math.random() * (high - low + 1) + low)
 }
 
-var mod = 1;
-
 app.post('/', (req, res) => {
 	console.log(`Got request body: ${JSON.stringify(req.body)}`);
 
@@ -92,6 +93,12 @@ app.post('/', (req, res) => {
 	};
 	addReplyBodyIfNeeded(replyBody, requestText);
 
+	if (enable == 0)
+	{
+		console.log('disabled');
+		return;
+	}
+
 	res.status(200).send('Hello from STC stub!');
 	makeRequest(replyTo, replyBody);
 });
@@ -108,6 +115,8 @@ app.post('/check', (req, res) => {
 	}
 });
 
+
+
 app.post('/check_with_no_body', (req, res) => {
 	console.log(`checking... (mod:${mod})`);
 	if (randomIntInc(1, 10) <= mod) {
@@ -118,6 +127,15 @@ app.post('/check_with_no_body', (req, res) => {
 		res.status(200).send();
 		console.log('200 sent');
 	}
+});
+
+app.post('/toggle', (req, res) => {
+	if (enable == 0)
+		enable = 1;
+	else
+		enable = 0;
+
+	res.status(200).send(`enable switched to ${enable}`);
 });
 
 valid_mods = ["1", "0", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"];
