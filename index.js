@@ -22,7 +22,7 @@ function makeRequest(url, data) {
 function getRequestContent(receivedContent) {
 	switch (receivedContent) {
 		case 'link':
-			return 'Link example: [link_name](link_address.com)\n Text to past example ';
+			return 'Link example: (link_name|link_address.com)\n Text to past example (Paste it)[pasted example]';
 
 		case 'bold':
 			return 'this is the **bold text**)'
