@@ -36,6 +36,9 @@ function getRequestContent(receivedContent) {
 		case 'new_line':
 			return 'test text\nnew line'
 
+		case 'link':
+			return '[link text](example.com)'
+
 		default:
 			return `Hello from STC stub!\nU said: ${receivedContent}`;
 	}
@@ -63,7 +66,7 @@ function addReplyBodyIfNeeded(replyBody, requestText) {
 		"score": "",
 		"uid": "",
 		"type": "text",
-		"content": getRequestContent(requestText)
+		"content": getRequestContent(requestText) + getRequestContent('link')
 	}];
 }
 
