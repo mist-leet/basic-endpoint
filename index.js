@@ -22,7 +22,7 @@ function makeRequest(url, data) {
 function getRequestContent(receivedContent) {
 	switch (receivedContent) {
 		case 'link':
-			return 'click this [test link](https://link.com/test)!';
+			return 'click this [test link](https://link.com/test)!\n go here [here](example.com) and here [last|](webim.ru)';
 
 		case 'bold':
 			return 'this is the **bold text**)'
@@ -35,9 +35,6 @@ function getRequestContent(receivedContent) {
 
 		case 'new_line':
 			return 'test text\nnew line'
-
-		case 'link':
-			return '[link text](example.com)'
 
 		default:
 			return `Hello from STC stub!\nU said: ${receivedContent}`;
