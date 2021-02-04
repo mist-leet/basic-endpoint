@@ -21,6 +21,34 @@ function makeRequest(url, data) {
 
 function getRequestContent(receivedContent) {
 	switch (receivedContent) {
+		case '1':
+			return 'Link example: (GOOGLE|https://google.com)'
+
+		case '2':
+			return 'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)'
+
+		case '3': 
+			return 'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)'+ 'Link example: (GOOGLE|https://google.com)'
+
+		case '4':
+			return 'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)' +
+					'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)'
+		case '5':
+		return 'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)' +
+					'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)'+ 'Link example: (GOOGLE|https://google.com)'
+		case '6':
+		return 'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)' +
+					'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)'+
+					'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)'
+
+		case 'p':
+			return 'pic picachu.png pic wow.png'
+
+		case 'mix':
+			return 'pic picachu.png ' + 
+			'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE|https://google.com)'+
+					'Link example: (GOOGLE|https://google.com)' + 'Link example: (GOOGLE pic wow.png|https://google.com)' + 'pic file_does_not_exist.png'
+
 		case 'link':
 			return 'Link example: (GOOGLE|https://google.com)\n Text to past example [Paste it](pasted example)\nLink example: (YANDEX|https://ya.ru)\n Text to past example [Paste it](pasted example)	';
 
