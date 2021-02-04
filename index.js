@@ -91,7 +91,7 @@ function addReplyBodyIfNeeded(replyBody, requestText) {
 		"score": "",
 		"uid": "",
 		"type": "text",
-		"content": getRequestContent(requestText) + getRequestContent('link')
+		"content": getRequestContent(requestText)
 	}];
 }
 
