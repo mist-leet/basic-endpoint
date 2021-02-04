@@ -65,7 +65,7 @@ function getRequestContent(receivedContent) {
 			return 'test text\nnew line'
 
 		default:
-			return `Hello from STC stub!\nU said: ${receivedContent}`;
+			return 'Hello';
 	}
 }
 
