@@ -21,15 +21,20 @@ function makeRequest(url, data) {
 
 function getRequestContent(receivedContent) {
 	switch (receivedContent) {
+		console.log(1);
 		if (Number(receivedContent)) {
+			console.log(2);
 			count = Number(receivedContent);
+			console.log(3);
 			s = '';
 			for (var i = 0; i < count; i += 1)
 			{
+				console.log('i ', i);
 				s += 'Link example: (GOOGLE|https://google.com)\n';
 			}
 			return s;
 		}
+		console.log(4);
 		case 'p':
 			return 'pic picachu.png pic wow.png';
 
