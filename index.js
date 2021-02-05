@@ -21,8 +21,8 @@ function makeRequest(url, data) {
 
 function getRequestContent(receivedContent) {
 	switch (receivedContent) {
-		if (parseInt(receivedContent)) {
-			var count = parseInt(receivedContent);
+		if (Number(receivedContent)) {
+			count = Number(receivedContent);
 			s = '';
 			for (var i = 0; i < count; i += 1)
 			{
@@ -31,12 +31,12 @@ function getRequestContent(receivedContent) {
 			return s;
 		}
 		case 'p':
-			return 'pic picachu.png pic wow.png'
+			return 'pic picachu.png pic wow.png';
 
 		case 'mix':
 			return 'pic picachu.png ' + 'pic file_does_not_exist.png ' + 
 			'Link example: (YANDEX|https://ya.ru)\n Text to past example [Paste it](pasted example)	' +
-			'Link example: (YANDEX pic picachu.png|https://ya.ru)\n'
+			'Link example: (YANDEX pic picachu.png|https://ya.ru)\n';
 
 		case 'link':
 			return 'Link example: (GOOGLE|https://google.com)\n Text to past example [Paste it](pasted example)\nLink example: (YANDEX|https://ya.ru)\n Text to past example [Paste it](pasted example)	';
