@@ -20,8 +20,7 @@ function makeRequest(url, data) {
 }
 
 function getRequestContent(receivedContent) {
-	switch (receivedContent) {
-		console.log('1');
+	console.log('1');
 		if (Number(receivedContent)) {
 			console.log('2');
 			count = Number(receivedContent);
@@ -34,7 +33,7 @@ function getRequestContent(receivedContent) {
 			}
 			return s;
 		}
-		console.log('4');
+	switch (receivedContent) {
 		case 'p':
 			return 'pic picachu.png pic wow.png';
 
