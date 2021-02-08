@@ -36,10 +36,10 @@ function getRequestContent(receivedContent) {
 		case 'mix':
 			return 'pic picachu.png ' +
 			'pic file_does_not_exist.png ' + 
-			'Link example: [yandex]|(https://ya.ru)\n ' + 
-			'Paste button example [Нажми на меня](Текст, который вставляется в поле)\n' +
-			'Link example with sticker inside: [YANDEX pic picachu.png]|(https://ya.ru)\n' +
-			'[bad formmatiing example(]some word pic)';
+			'Вот ссылка на [yandex]|(https://ya.ru)\n ' + 
+			'Вот кнопка [текст кнопки](Текст, который вставляется в поле)\n' +
+			'Вот ссылка со стикером внутри [YANDEX pic picachu.png]|(https://ya.ru)\n' +
+			'А вот нерабочее форматирование [bad formmatiing example(]some word pic)';
 
 		case 'link':
 			return 'go to [google](https://google.com)';
