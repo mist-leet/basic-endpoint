@@ -20,15 +20,11 @@ function makeRequest(url, data) {
 }
 
 function getRequestContent(receivedContent) {
-	console.log('1');
 		if (Number(receivedContent)) {
-			console.log('2');
 			count = Number(receivedContent);
-			console.log('3');
 			s = '';
 			for (var i = 0; i < count; i += 1)
 			{
-				console.log('i ');
 				s += 'Link example: [GOOGLE]|(https://google.com)\n';
 			}
 			return s;
@@ -42,8 +38,9 @@ function getRequestContent(receivedContent) {
 			'pic picachu.png ' +
 			'pic file_does_not_exist.png ' + 
 			'Link example: [yandex]|(https://ya.ru)\n ' + 
-			'Paste button example [Нажми на меня](Текст, который вставляется в поле)' +
-			'Link example with sticker inside: (YANDEX pic picachu.png|https://ya.ru)\n';
+			'Paste button example [Нажми на меня](Текст, который вставляется в поле)\n' +
+			'Link example with sticker inside: [YANDEX pic picachu.png]|(https://ya.ru)\n' +
+			'[bad formmatiing example(]some word pic)';
 
 		case 'link':
 			return 'go to [google](https://google.com)';
