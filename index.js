@@ -34,8 +34,7 @@ function getRequestContent(receivedContent) {
 			return 'pic picachu.png pic wow.png';
 
 		case 'mix':
-			return 
-			'pic picachu.png ' +
+			return 'pic picachu.png ' +
 			'pic file_does_not_exist.png ' + 
 			'Link example: [yandex]|(https://ya.ru)\n ' + 
 			'Paste button example [Нажми на меня](Текст, который вставляется в поле)\n' +
