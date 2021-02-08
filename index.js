@@ -29,7 +29,7 @@ function getRequestContent(receivedContent) {
 			for (var i = 0; i < count; i += 1)
 			{
 				console.log('i ');
-				s += 'Link example: (GOOGLE|https://google.com)\n';
+				s += 'Link example: [GOOGLE]|(https://google.com)\n';
 			}
 			return s;
 		}
@@ -39,8 +39,8 @@ function getRequestContent(receivedContent) {
 
 		case 'mix':
 			return 'pic picachu.png ' + 'pic file_does_not_exist.png ' + 
-			'Link example: (YANDEX|https://ya.ru)\n Text to past example [Paste it](pasted example)	' +
-			'Link example: (YANDEX pic picachu.png|https://ya.ru)\n';
+			'Link example: [yandex]|(https://ya.ru)\n ' + 'Paste button example [Нажми на меня](Текст, который вставляется в поле)'
+			'Link example with sticker inside: (YANDEX pic picachu.png|https://ya.ru)\n';
 
 		case 'link':
 			return 'go to [google](https://google.com)';
