@@ -20,15 +20,15 @@ function makeRequest(url, data) {
 }
 
 function getRequestContent(receivedContent) {
-		if (Number(receivedContent)) {
-			count = Number(receivedContent);
-			s = '';
-			for (var i = 0; i < count; i += 1)
-			{
-				s += 'Link example: [GOOGLE]|(https://google.com)\n';
-			}
-			return s;
+	if (Number(receivedContent)) {
+		count = Number(receivedContent);
+		s = '';
+		for (var i = 0; i < count; i += 1)
+		{
+			s += 'Link example: [GOOGLE]|(https://google.com)\n';
 		}
+		return s;
+	}
 	switch (receivedContent) {
 		case 'p':
 			return 'pic picachu.png pic wow.png';
@@ -79,13 +79,13 @@ function addReplyBodyIfNeeded(replyBody, requestText) {
 	if (requestText === 'no_body') {
 		return;
 	}
-
 	replyBody['data'] = [{
 		"score": "",
 		"uid": "",
 		"type": "text",
 		"content": getRequestContent(requestText)
 	}];
+	console.log('message sent: ', getRequestContent(requestText));
 }
 
 function randomIntInc(low, high) {
