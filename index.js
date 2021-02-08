@@ -43,7 +43,7 @@ function getRequestContent(receivedContent) {
 			'Link example: (YANDEX pic picachu.png|https://ya.ru)\n';
 
 		case 'link':
-			return 'Link example: (GOOGLE|https://google.com)\n Text to past example [Paste it](pasted example)\nLink example: (YANDEX|https://ya.ru)\n Text to past example [Paste it](pasted example)	';
+			return 'go to [google](https://google.com)';
 
 		case 'bold':
 			return 'this is the **bold text**)'
