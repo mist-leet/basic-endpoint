@@ -41,11 +41,19 @@ function getRequestContent(receivedContent) {
 			'Вот ссылка со стикером внутри [YANDEX pic picachu.png]|(https://ya.ru)\n' +
 			'А вот нерабочее форматирование [bad formmatiing example(]some word pic)';
 
+		case 'max':
+			return 'all markdowns should contain: \n*bold text \n*italic \n*link button \n*paste button \n*stickers\n'+
+			'***bold text***' +
+			'_italic text_' +
+			'[google]|(https://google.com)' +
+			'[inserting](text to insert)' +
+			'pic picachu.png' 
+
 		case 'link':
 			return 'go to [google](https://google.com)';
 
 		case 'bold':
-			return 'this is the **bold text**)'
+			return 'this is the **bold text**'
 
 		case 'italic':
 			return 'here is _italic text_'
