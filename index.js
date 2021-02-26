@@ -25,29 +25,20 @@ function getRequestContent(receivedContent) {
 		s = '';
 		for (var i = 0; i < count; i += 1)
 		{
-			s += 'Link example: [GOOGLE]|(https://google.com)\n';
+			s += 'Link example: [google ' + i.toString() + '|https://google.com]\n';
 		}
 		return s;
 	}
 	switch (receivedContent) {
 		case 'p':
-			return 'pic picachu.png pic wow.png';
+			return '[pic picachu.png]';
 
 		case 'mix':
-			return 'pic picachu.png ' +
-			'pic file_does_not_exist.png ' + 
-			'Вот ссылка на [yandex]|(https://ya.ru)\n ' + 
-			'Вот кнопка [текст кнопки](Текст, который вставляется в поле)\n' +
-			'Вот ссылка со стикером внутри [YANDEX pic picachu.png]|(https://ya.ru)\n' +
-			'А вот нерабочее форматирование [bad formmatiing example(]some word pic)';
-
-		case 'max':
-			return 'all markdowns should contain: \n*bold text \n*italic \n*link button \n*paste button \n*stickers\n'+
-			'***bold text***' +
-			'_italic text_' +
-			'[google]|(https://google.com)' +
-			'[inserting](text to insert)' +
-			'pic picachu.png' 
+			return 'Какой то текст\n' + 
+				   'Стикер: [pic picachu.png]\n' +
+				   'Кнопка ссылка: [google|https://google.com]\n' +
+				   'Кнопка с текстом: [кнопка с текстом]\n' +
+				   'какой то текст\n'
 
 		case 'link':
 			return 'go to [google](https://google.com)';
