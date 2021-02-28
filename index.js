@@ -41,9 +41,9 @@ function getRequestContent(receivedContent) {
 				   'какой то текст\n' +
 				   'Несуществующий стикер: [pic not_found_sticker.png]\n'
 		case 'mix2':
-			return 'ссылка [google](https://google.com)' +
-				'this is the **bold text**' +
-				'here is _italic text_' +
+			return 'ссылка [google](https://google.com)\n' +
+				'this is the **bold text**\n' +
+				'here is _italic text_\n' +
 				'You need to see this\n* item1\n* item2\n* item3\n' +
 				'test text\nnew line' 
 
