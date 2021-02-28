@@ -34,23 +34,22 @@ function getRequestContent(receivedContent) {
 			return '[pic picachu.png]';
 
 		case 'mix':
-			return 'Какой то текст \n' + 
-				   'Стикер [pic picachu.png]\n' +
+			return 'Стикер [pic picachu.png]\n' +
 				   'Кнопка ссылка [google|https://google.com]\n' +
 				   'Кнопка с текстом [кнопка с текстом]\n' +
-				   'какой то текст\n' +
 				   'Несуществующий стикер: [pic not_found_sticker.png]\n'
+
 		case 'mix2':
-			return 'ссылка [google](https://google.com)\n' +
-				'this is the **bold text**\n' +
-				'here is _italic text_\n' +
-				'You need to see this\n* item1\n* item2\n* item3\n' +
-				'test text\nnew line' 
+			return  'ссылка [google](https://google.com)\n' +
+					'this is the **bold text**\n' +
+					'here is _italic text_\n' +
+					'You need to see this\n* item1\n* item2\n* item3\n' +
+					'test text\nnew line' 
 		case 'mix3':
-			return 'какой то текст' +
-				'_стикер_ [pic picachu.png]' +
-				'кнопка с текстом [**текст такой** _текст сякой_' +
-				'ссылка [**текст такой** текст сякой**|https://google.com]'
+			return  'какой то текст \n' +
+					'_стикер_ [pic picachu.png]\n' +
+					'кнопка с текстом [**текст такой** _текст сякой_]\n' +
+					'ссылка [**текст такой** текст сякой**|https://google.com]\n'
 		case 'mixes':
 				return  'Какой то текст \n' + 
 				   		'Стикер [pic picachu.png]\n' +
@@ -63,10 +62,10 @@ function getRequestContent(receivedContent) {
 						'here is _italic text_\n' +
 						'You need to see this\n* item1\n* item2\n* item3\n' +
 						'test text\nnew line' 
-						'какой то текст' +
-						'_стикер_ [pic picachu.png]' +
-						'кнопка с текстом [**текст такой** _текст сякой_' +
-						'ссылка [**текст такой** текст сякой**|https://google.com]'
+						'какой то текст\n' +
+						'_стикер_ [pic picachu.png]\n' +
+						'кнопка с текстом [**текст такой** _текст сякой_]\n' +
+						'ссылка [**текст такой** текст сякой**|https://google.com]\n'
 
 
 
