@@ -51,6 +51,24 @@ function getRequestContent(receivedContent) {
 				'_стикер_ [pic picachu.png]' +
 				'кнопка с текстом [**текст такой** _текст сякой_' +
 				'ссылка [**текст такой** текст сякой**|https://google.com]'
+		case 'mixes':
+				return  'Какой то текст \n' + 
+				   		'Стикер [pic picachu.png]\n' +
+				   		'Кнопка ссылка [google|https://google.com]\n' +
+				   		'Кнопка с текстом [кнопка с текстом]\n' +
+				   		'какой то текст\n' +
+				   		'Несуществующий стикер: [pic not_found_sticker.png]\n'
+						'ссылка [google](https://google.com)\n' +
+						'this is the **bold text**\n' +
+						'here is _italic text_\n' +
+						'You need to see this\n* item1\n* item2\n* item3\n' +
+						'test text\nnew line' 
+						'какой то текст' +
+						'_стикер_ [pic picachu.png]' +
+						'кнопка с текстом [**текст такой** _текст сякой_' +
+						'ссылка [**текст такой** текст сякой**|https://google.com]'
+
+
 
 		case 'link':
 			return 'go to [google](https://google.com)';
