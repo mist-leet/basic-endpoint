@@ -1,6 +1,11 @@
 const express = require('express');
 const request = require('request');
 
+var path    = require("path");
+var engines = require('consolidate');
+app.use(express.static(path.join(__dirname, 'views')));
+app.engine('html', engines.mustache);
+
 const port = process.env.PORT || 4444;
 const app = express();
 
@@ -175,7 +180,7 @@ app.post('/mod/:mod', (req, res) => {
 	}
 });
 
-app.get('/chat' (req, res) => {
+app.get('/chat', (req, res) => {
 	res.render('chat.html')
 });
 
