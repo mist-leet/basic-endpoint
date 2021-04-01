@@ -45,30 +45,6 @@ function getRequestContent(receivedContent) {
 					'here is _italic text_\n' +
 					'You need to see this\n* item1\n* item2\n* item3\n' +
 					'test text\nnew line' 
-		case 'mix3':
-			return  'какой то текст \n' +
-					'_стикер_ [pic picachu.png]\n' +
-					'кнопка с текстом [**текст такой** _текст сякой_]\n' +
-					'ссылка [**текст такой** текст сякой**|https://google.com]\n'
-		case 'mixes':
-				return  'Какой то текст \n' + 
-				   		'Стикер [pic picachu.png]\n' +
-				   		'Кнопка ссылка [google|https://google.com]\n' +
-				   		'Кнопка с текстом [кнопка с текстом]\n' +
-				   		'какой то текст\n' +
-				   		'Несуществующий стикер: [pic not_found_sticker.png]\n'
-						'ссылка [google](https://google.com)\n' +
-						'this is the **bold text**\n' +
-						'here is _italic text_\n' +
-						'You need to see this\n* item1\n* item2\n* item3\n' +
-						'test text\nnew line' 
-						'какой то текст\n' +
-						'_стикер_ [pic picachu.png]\n' +
-						'кнопка с текстом [**текст такой** _текст сякой_]\n' +
-						'ссылка [**текст такой** текст сякой**|https://google.com]\n'
-
-
-
 		case 'link':
 			return 'go to [google](https://google.com)';
 
@@ -197,6 +173,10 @@ app.post('/mod/:mod', (req, res) => {
 	else {
 		res.status(403).send(`mod: ${mod}`);	
 	}
+});
+
+app.get('/chat' (req, res) => {
+	res.render('chat.html')
 });
 
 
